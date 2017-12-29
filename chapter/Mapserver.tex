@@ -46,3 +46,14 @@ Jika anda melihat tampilan home MAPSERVER atau MS4W proses instalasi anda berhas
 		\label{gambar4}
 		\end{figure}
 \end{enumerate}
+
+
+\subsection{Arsitektur}
+\begin{figure}[ht]
+	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar6.JPG}}
+	    \caption{Arsitektur}
+		\label{gambar6}
+		\end{figure}
+Pada sistem aplikasi ini, browser (client) mengirimkan request (melalui jaringan internet/intranet) ke web server dalam bentuk request terkait spasial (lokasi[x,y] click kursor, status [on/off] layer yang akan dimunculkan, dsb).
+Kemudian oleh web server, request terkait spasial ini dikirim ke server aplikasi (yang dibangun dengan menggunakan pemograman script yang telah tersedia) dan Mapserver (program CGI). Setelah itu, Mapserver akan membaca mapfile, data peta, dan data eksternal (jika ada dan memang diperlukan).
+Setelah itu, gambar akan dikirim ke web server dan akhirnya browser milik client. Arsitektur Mapserver cenderung bercirikan thin-client.
