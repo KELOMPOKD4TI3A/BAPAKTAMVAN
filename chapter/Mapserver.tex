@@ -57,3 +57,10 @@ Jika anda melihat tampilan home MAPSERVER atau MS4W proses instalasi anda berhas
 Pada sistem aplikasi ini, browser (client) mengirimkan request (melalui jaringan internet/intranet) ke web server dalam bentuk request terkait spasial (lokasi[x,y] click kursor, status [on/off] layer yang akan dimunculkan, dsb).
 Kemudian oleh web server, request terkait spasial ini dikirim ke server aplikasi (yang dibangun dengan menggunakan pemograman script yang telah tersedia) dan Mapserver (program CGI). Setelah itu, Mapserver akan membaca mapfile, data peta, dan data eksternal (jika ada dan memang diperlukan).
 Setelah itu, gambar akan dikirim ke web server dan akhirnya browser milik client. Arsitektur Mapserver cenderung bercirikan thin-client.
+
+\section{Arsitektur Dasar Aplikasi MapServer}
+Map File - file konfigurasi teks terstruktur untuk aplikasi MapServer Anda. Ini mendefinisikan area peta Anda, memberi tahu program MapServer tempat data Anda berada dan di mana menampilkan gambar.
+Data Geografis - MapServer dapat memanfaatkan banyak jenis sumber data geografis. Format defaultnya adalah format ESRI Shape.
+HTML Pages - antarmuka antara pengguna dan MapServer. Mereka biasanya duduk di root Web. Dalam bentuknya yang paling sederhana, MapServer dapat dipanggil untuk menempatkan gambar peta statis pada halaman HTML. Untuk membuat peta interaktif, gambar ditempatkan dalam bentuk HTML pada halaman.
+MapServer CGI - File biner atau executable yang menerima permintaan dan mengembalikan gambar, data, dan lain-lain. Ini ada di direktori cgi-bin atau script dari server web.
+Web / HTTP Server - menyajikan halaman HTML saat dilanda browser pengguna.
