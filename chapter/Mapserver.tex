@@ -18,8 +18,11 @@ Mapserver menghasilkan keluaran berupa file graphic berdasarkan masukan yang dib
 \subsection{Pengertian MS4W}
 MapServer for Windows (MS4W) adalah suatu packet software untuk mempermudah pengguna dalam menginstalasi MapServer pada platform OS Microsoft Windows. Tujuannya adalah untuk mempermudah semua user, terhindar dari segala bagian kecil yang rumit dalam mempersiapkan lingkungan kerja yang dibutuhkan oleh MapServer pada lingkungan Microsoft Windows. Software ini juga merupakan suatu cara yang bagus dalam memaketkan kemudian mendistribusikan aplikasi-aplikasi MapServer kepada pihak manapun.
 
+MS4W dilengkapi dengan berbagai modul tambahan yang mempermudah kita membangun dan mengadministrasi sistem WebGIS. Antara lain : MapLab, KaMap, Chameleon, dan lain-lain. MapLab digunakan untuk mempermudah kita membuat file konfigurasi MapServer ( *.map ) pada aplikasi WebGIS yang kita kembangkan. Sedang Chameleon adalah framework yang menyediakan berbagai class dan method yang mempermudah kita membangun interface aplikasi WebGIS yang kita kembangkan, seperti menambahkan fitur zoom, pan, dsb. Informasi mengenai MS4W, MapLab dan Chameleon dapat diperoleh di situs www.maptools.org
+
 \subsubsection{Komponen MS4W}
 Paket dasar MS4W terdiri dari beberapa komponen sebagai berikut:
+begin{enumerate}
 \item Webserver Apache
 \item PHP
 \item MapServer CGI
@@ -28,6 +31,7 @@ Paket dasar MS4W terdiri dari beberapa komponen sebagai berikut:
 \item Program utiliti MapServer (shp2img, legend, scalebar, sortshp, sym2img, shptree, dan tile4ms)
 \item Ekstensi OGR/PHP
 \item OWTChart
+\end{enumerate}
 
 \subsection{Cara Instalasi Mapserver}
 \begin{enumerate}
@@ -74,17 +78,17 @@ Pada sistem aplikasi ini, browser (client) mengirimkan request (melalui jaringan
 Kemudian oleh web server, request terkait spasial ini dikirim ke server aplikasi (yang dibangun dengan menggunakan pemograman script yang telah tersedia) dan Mapserver (program CGI). Setelah itu, Mapserver akan membaca mapfile, data peta, dan data eksternal (jika ada dan memang diperlukan).
 Setelah itu, gambar akan dikirim ke web server dan akhirnya browser milik client. Arsitektur Mapserver cenderung bercirikan thin-client.
 
-\section{Arsitektur Dasar Aplikasi MapServer}
+\subsection{Arsitektur Dasar Aplikasi MapServer}
 Map File - file konfigurasi teks terstruktur untuk aplikasi MapServer Anda. Ini mendefinisikan area peta Anda, memberi tahu program MapServer tempat data Anda berada dan di mana menampilkan gambar.
 Data Geografis - MapServer dapat memanfaatkan banyak jenis sumber data geografis. Format defaultnya adalah format ESRI Shape.
 HTML Pages - antarmuka antara pengguna dan MapServer. Mereka biasanya duduk di root Web. Dalam bentuknya yang paling sederhana, MapServer dapat dipanggil untuk menempatkan gambar peta statis pada halaman HTML. Untuk membuat peta interaktif, gambar ditempatkan dalam bentuk HTML pada halaman.
 MapServer CGI - File biner atau executable yang menerima permintaan dan mengembalikan gambar, data, dan lain-lain. Ini ada di direktori cgi-bin atau script dari server web.
 Web / HTTP Server - menyajikan halaman HTML saat dilanda browser pengguna.
 
-\section{Kebutuhan Hardware}
+\subsection{Kebutuhan Hardware}
 MapServer berjalan di Linux, Windows, Mac OS X, Solaris, dan banyak lagi. Untuk mengkompilasi atau menginstal beberapa program yang diperlukan, Anda mungkin memerlukan hak administratif atas mesin. Orang biasanya mengajukan pertanyaan tentang spesifikasi perangkat keras minimum untuk aplikasi MapServer, namun jawabannya benar-benar spesifik untuk aplikasi individual. Untuk tujuan pengembangan dan pembelajaran, mesin yang sangat minim akan bekerja dengan baik. Untuk penyebaran, Anda ingin menyelidiki Optimalisasi segala sesuatu mulai dari data Anda hingga konfigurasi server.
 
-\section{Fitur-fitur yang ditawarkan MapServer :}
+\subsection{Fitur-fitur yang ditawarkan MapServer :}
  \begin{enumerate}
 \item Format Vektor : ESRI, shapefile, ESRI ArcSDE.
 \item Format Raster : TIFF / GeoTIFF, GIF, PNG, ERDAS, JPEG, EPPL7.
