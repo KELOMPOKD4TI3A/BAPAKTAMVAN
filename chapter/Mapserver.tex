@@ -78,6 +78,15 @@ Pada sistem aplikasi ini, browser (client) mengirimkan request (melalui jaringan
 Kemudian oleh web server, request terkait spasial ini dikirim ke server aplikasi (yang dibangun dengan menggunakan pemograman script yang telah tersedia) dan Mapserver (program CGI). Setelah itu, Mapserver akan membaca mapfile, data peta, dan data eksternal (jika ada dan memang diperlukan).
 Setelah itu, gambar akan dikirim ke web server dan akhirnya browser milik client. Arsitektur Mapserver cenderung bercirikan thin-client.
 
+Untuk dapat menjalankan dan menampilkan peta yang dihasilkan oleh MapServer, diperlukan dua file yaitu Map File dan HTML File. Map file berisikan konfigurasi penyajian peta yang ditulis dalam bahasa dan syntax tersendiri. Informasi itu kemudian diolah dan disajikan oleh program MapServer. 
+Sedangkan file HTML digunakan untuk melakukan format penyajian hasil (peta). File HTML dapat berupa HTML biasa atau template yang disisipi syntax MapServer ataupun PHP/MapScript.
+
+\begin{figure}[ht]
+	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar7.JPG}}
+	    \caption{Arsitektur}
+		\label{gambar7}
+		\end{figure}
+
 \subsection{Arsitektur Dasar Aplikasi MapServer}
 Map File - file konfigurasi teks terstruktur untuk aplikasi MapServer Anda. Ini mendefinisikan area peta Anda, memberi tahu program MapServer tempat data Anda berada dan di mana menampilkan gambar.
 Data Geografis - MapServer dapat memanfaatkan banyak jenis sumber data geografis. Format defaultnya adalah format ESRI Shape.
