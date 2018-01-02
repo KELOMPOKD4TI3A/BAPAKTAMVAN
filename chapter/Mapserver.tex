@@ -5,6 +5,8 @@ MapServer adalah sebuah aplikasi freeware dan open source yang dapat menampilkan
 
 MapServer adalah salah satu proyek pendiri yayasan OSGeo, dan dikelola oleh semakin banyak pengembang (mendekati 20) dari seluruh dunia. Ini didukung oleh beragam kelompok organisasi yang mendanai perangkat tambahan dan pemeliharaan, dan dikelola di dalam OSGeo oleh Komite Pengarah Proyek MapServer yang terdiri dari pengembang dan kontributor lainnya. Semua kode sumber tersedia secara terbuka melalui GitHub.
 
+Mekanisme mapserver yaitu membuat layer-layer yang berisi berupa tampilan peta. Contohnya, layer peta Negara Indonesia, layer batas provinsi di Indonesia, layer batas kabupaten di Indonesia, layer titik-titik, dll. Ilustrasi layer berupa tampilan tersebut adalah sebagai berikut: angka paling rendah merupakan layer paling atas dan angka paling tinggi merupakan layer yang paling bawah.
+
 Kekurangan mapserver adalah penggunaan dan konfigurasi mapfile yang cukup sulit untuk pemula. Developer harus melihat dan mengatur layer dengan cara mengcoding mapfile tersebut. Kemudian jika data GIS tersimpan dalam database peta. Mapserver perlu diatur koneksinya. Hal ini cukup sulit karena informasi host, username, password, port, dan database ditampilkan di mapfile tanpa ada proses enkripsi. Solusinya dengan menjaga agar mapfile ini tidak bisa diakses dari luar server.
 
 Map Server bekerja beriringan dengan aplikasi web server. Web Server menerima request peta melalui MapServer, lalu MapServer mengenerate request terhadap peta lalu mengirimkannya ke web server seperti gambar dibawah ini.
