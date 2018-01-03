@@ -160,3 +160,33 @@ Organisasi data setidaknya sama pentingnya dengan konfigurasi perangkat keras da
 
 \item Generalisasi untuk Ikhtisar - buat lapisan data yang lebih sederhana dan umum untuk ditampilkan pada skala kecil, lalu gunakan lapisan bergantung skala menggunakan LAYER MINSCALE dan LAYER MAXSCALE untuk menampilkan lapisan data yang lebih terperinci saat pengguna memperbesar. Konsep yang sama berlaku untuk gambar.
 Lihat juga Optimalisasi
+\end{enumerate}
+
+\subsection {Membuat MapFile (Satu Layer)}
+\begin {enumerate}
+\item Buatlah folder baru dengan nama latihan di direktori apps yang ada di dalam folder
+ms4w(dalam contoh ini folder ms4w berada di driver C:, sehingga nanti akan didapatkan path c:\ms4w\apps\latihan). 
+
+\item Copy data peta dan file pendukungnya (sebelumnya kita download terlebih dahulu, yang kita pakai adalah peta indonesia) ke dalam folder latihan tersebut
+
+\item Buat folder map di folder latihan yang sebelumnya sudah dibut. Lalu buat sebuah mapfile sederhana dengan nama latihan01.map di direktori latihan/map. Mapfile ini akan digunakan untuk menampilkan sebuah layer (layer “Proponsi”) peta di layar web browser kita
+\begin{figure}[ht]
+	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar9.JPG}}
+	    \caption{File ekstensi *.map}
+		\label{gambar9}
+		\end{figure}
+
+\item Untuk memunculkannya ketik di URL web browser seperti ini:
+\begin{figure}[ht]
+	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar10.JPG}}
+	    \caption{URL}
+		\label{gambar10}
+		\end{figure}
+
+\item Dan untuk hasilnya seperti ini
+\begin{figure}[ht]
+	    \centerline{\includegraphics[width=0.50\textwidth]{figures/gambar11.JPG}}
+	    \caption{Hasil Mapserver}
+		\label{gambar11}
+		\end{figure}
+\end{enumerate}
