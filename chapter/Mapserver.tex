@@ -149,3 +149,14 @@ Saat ini, selain dapat mengakses MapServer sebagai program CGI, kita juga dapat 
 
 \subsection{Optimalisasi Data}
 Organisasi data setidaknya sama pentingnya dengan konfigurasi perangkat keras dalam mengoptimalkan aplikasi MapServer untuk kinerja. MapServer cukup efisien dalam hal ini, namun dengan mengurangi jumlah pemrosesan yang perlu dilakukan pada saat permintaan pengguna, Anda dapat meningkatkan kinerja. Berikut adalah beberapa aturannya:
+\begin{enumerate}
+\item Indeks Data Anda - Dengan membuat indeks spasial untuk dataset Shape Anda menggunakan shptree. Indeks spasial juga harus dibuat untuk database sadar spasial seperti PostGIS dan Oracle Spatial.
+
+\item Tile Your Data - Idealnya, data Anda akan 'diiris' menjadi beberapa potongan ukuran yang akan ditampilkan. Ada overhead yang tidak perlu saat mencari melalui dataset Shape besar atau gambar yang hanya akan Anda tampilkan di area kecil. Dengan memecah data menjadi ubin dan membuat indeks genteng, MapServer hanya perlu membuka dan mencari file data yang diminati. Kumpulan data dapat dipecah menjadi ubin yang lebih kecil dan kemudian kumpulan data tileindex Shape dapat dibuat menggunakan utilitas tile4ms. Kumpulan data tileindex untuk file raster juga dapat dibuat.
+
+\item Pra-Klasifikasi Data Anda - MapServer memungkinkan penggunaan EXPRESSION yang cukup kompleks untuk mengklasifikasikan data. Namun, menggunakan ekspresi logis dan reguler lebih banyak resource intensive daripada perbandingan string. Untuk meningkatkan efisiensi, Anda bisa membagi data Anda ke kelas lebih awal, membuat field untuk digunakan sebagai CLASSITEM dan mengisinya dengan nilai sederhana yang mengidentifikasi kelas, seperti 1,2,3, atau 4 untuk empat data kelas. set. Anda kemudian bisa melakukan perbandingan string sederhana untuk kelas EXPRESSION.
+
+\item Pra-Proses Gambar Anda - Lakukan pemrosesan intensif sumber daya di depan. Lihat referensi Raster Data untuk info lebih lanjut.
+
+\item Generalisasi untuk Ikhtisar - buat lapisan data yang lebih sederhana dan umum untuk ditampilkan pada skala kecil, lalu gunakan lapisan bergantung skala menggunakan LAYER MINSCALE dan LAYER MAXSCALE untuk menampilkan lapisan data yang lebih terperinci saat pengguna memperbesar. Konsep yang sama berlaku untuk gambar.
+Lihat juga Optimalisasi
